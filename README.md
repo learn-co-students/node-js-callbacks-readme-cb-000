@@ -68,7 +68,7 @@ function fetchResults(searchTerm) {
   });
 }
 
-fetchResults('peanut butter sandwich');
+fetchResults('peanut butter and jelly sandwich');
 ```
 
 So let's look at this code. The first var declaration creates a callback function: `successCallback`. Then we define a function `fetchResults` that contains a `jQuery.ajax()` request. The jquery ajax method takes an object with some options set: the first two set up the request itself by specifying the url and the method. Then there is an additional parameter `success`. Here is where we link in our callback functions.
@@ -83,7 +83,7 @@ function fetchResults(searchTerm) {
   });
 }
 
-fetchResults('peanut butter sandwich');
+fetchResults('peanut butter and jelly sandwich');
 ```
 
 Regardless of style, both code snippets achieve the same result by assigning the callback: now, once the ajax request returns back either sucessfully or with an error, the appropriate callback function will be called. The beauty of this is that the (asynchronous) process that occurs on the server can take as long as it needs to. Obviously, we don't want it to take a long time since that would annoy the user who is no doubt impatiently waiting for the results, but our program can now handle the indeterminate time-gap of this common asynchronous process because the process that is fetching the results now knows how to "call back" the process that will display the results once they are ready.
